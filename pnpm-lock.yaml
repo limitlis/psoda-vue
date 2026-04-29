@@ -11,13 +11,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      '@types/vue':
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@6.0.2)
-      oxfmt:
-        specifier: ^0.47.0
-        version: 0.47.0
     devDependencies:
       '@tsdown/css':
         specifier: ^0.21.10
@@ -49,6 +42,9 @@ importers:
       happy-dom:
         specifier: ^20.8.9
         version: 20.8.9
+      oxfmt:
+        specifier: ^0.47.0
+        version: 0.47.0
       typescript:
         specifier: ^6.0.2
         version: 6.0.2
@@ -1546,10 +1542,6 @@ packages:
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
-
-  '@types/vue@2.0.0':
-    resolution: {integrity: sha512-WDElkBv/o4lVwu6wYHB06AXs4Xo2fwDjJUpvPRc1QQdzkUSiGFjrYuSCy8raxLE5FObgKq8ND7R5gSZTFLK60w==}
-    deprecated: This is a stub types definition for vuejs (https://github.com/vuejs/vue). vuejs provides its own type definitions, so you don't need @types/vue installed!
 
   '@types/whatwg-mimetype@3.0.2':
     resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
@@ -4362,12 +4354,6 @@ snapshots:
       undici-types: 7.18.2
 
   '@types/tough-cookie@4.0.5': {}
-
-  '@types/vue@2.0.0(typescript@6.0.2)':
-    dependencies:
-      vue: 3.5.32(typescript@6.0.2)
-    transitivePeerDependencies:
-      - typescript
 
   '@types/whatwg-mimetype@3.0.2': {}
 
