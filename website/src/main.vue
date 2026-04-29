@@ -1051,7 +1051,7 @@ app.use(psoda);`);
         .psoda-can-alert {
             top: 220px;
             left: -150px;
-            z-index: 0;
+            z-index: -1;
         }
     }
 
