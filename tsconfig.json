@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": ["es2023", "ESNext", "DOM", "DOM.Iterable"],
+        "moduleDetection": "force",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "types": ["node"],
+        "strict": true,
+        "noUnusedLocals": true,
+        "declaration": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.vue"],
+    "exclude": ["node_modules", "dist", "**/*.js"]
+}

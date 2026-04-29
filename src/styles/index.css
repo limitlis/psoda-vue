@@ -1,0 +1,39 @@
+:root {
+    color-scheme: light dark;
+
+    --psoda-text-emphasis-color: light-dark(
+        var(--psoda-underline-color-light, rgb(255, 83, 3)),
+        var(--psoda-underline-color-dark, rgb(240, 64, 10))
+    );
+    --psoda-text-emphasis: var(--psoda-text-emphasis-character, dot) var(--psoda-text-emphasis-color, orangered);
+    --psoda-border-color-light: #222;
+    --psoda-border-color-dark: #bbbbbb;
+    --psoda-border-color: light-dark(var(--psoda-border-color-light), var(--psoda-border-color-dark));
+    --psoda-border-size: 1px;
+    --psoda-border-style: solid;
+    --psoda-border: var(--psoda-border-size) var(--psoda-border-style) var(--psoda-border-color);
+    --psoda-border-radius: 9px;
+    --psoda-background: light-dark(rgb(246, 246, 246), rgb(24, 24, 24));
+
+    --psoda-text-color-light: #131313;
+    --psoda-text-color-dark: #d5d5d5;
+    --psoda-color: light-dark(var(--psoda-text-color-light), var(--psoda-text-color-dark));
+    --psoda-fizz-anchor-font-family: sans-serif;
+}
+
+.psoda {
+    display: inline;
+    font-family: inherit;
+
+    &.anchor {
+        text-emphasis: var(--psoda-text-emphasis);
+        font-family: var(--psoda-fizz-font-family);
+        transition: all 250ms ease-in-out allow-discrete;
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+            text-emphasis-color: transparent;
+        }
+    }
+}
