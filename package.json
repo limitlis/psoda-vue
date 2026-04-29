@@ -35,7 +35,8 @@
         "access": "public"
     },
     "scripts": {
-        "build": "vp pack && vp run psoda-website#build",
+        "build": "vp pack",
+        "buildSite": "vp run psoda-website#build",
         "dev": "vp run pack --watch && vp run psoda-website#dev",
         "pack": "vp run pack",
         "test": "vp test",
