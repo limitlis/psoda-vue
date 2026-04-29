@@ -1,0 +1,77 @@
+{
+    "name": "psoda",
+    "version": "0.0.1",
+    "description": "Refreshingly simple Tooltips & Modals for Vue.",
+    "keywords": [
+        "Dialog",
+        "Modal",
+        "Popover",
+        "Tooltip",
+        "Snackbar",
+        "Vue"
+    ],
+    "homepage": "https://github.com/limitlis/psoda#readme",
+    "bugs": {
+        "url": "https://github.com/limitlis/psoda/issues"
+    },
+    "license": "MIT",
+    "author": "Cesar Vargas<cesar@limitlis.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/limitlis/psoda.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "sideEffects": false,
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/vue/index.js",
+        "./package.json": "./package.json",
+        "./style.css": "./dist/style.css"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "vp pack && vp run psoda-website#build",
+        "dev": "vp run pack --watch && vp run psoda-website#dev",
+        "pack": "vp run pack",
+        "test": "vp test",
+        "check": "vp check",
+        "prepublishOnly": "vp run build",
+        "prepare": "vp config",
+        "postversion": "vp run build"
+    },
+    "dependencies": {
+        "@types/vue": "^2.0.0",
+        "oxfmt": "^0.47.0"
+    },
+    "devDependencies": {
+        "@tsdown/css": "^0.21.10",
+        "@types/node": "^25.5.0",
+        "@typescript/native-preview": "7.0.0-dev.20260328.1",
+        "@vitejs/plugin-vue": "^6.0.5",
+        "@vitest/browser-playwright": "^4.1.5",
+        "@vitest/ui": "0.1.16",
+        "@vue/language-core": "^3.2.6",
+        "@vue/test-utils": "^2.4.6",
+        "bumpp": "^11.0.1",
+        "happy-dom": "^20.8.9",
+        "typescript": "^6.0.2",
+        "unplugin-dts": "1.0.0-beta.6",
+        "unplugin-oxc": "^0.6.0",
+        "vite-plus": "^0.1.14",
+        "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.16",
+        "vitest-browser-vue": "^2.1.0",
+        "vue": "^3.5.32"
+    },
+    "packageManager": "pnpm@10.33.0",
+    "pnpm": {
+        "overrides": {
+            "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+            "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+        }
+    }
+}
