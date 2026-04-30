@@ -2,7 +2,7 @@
     <main class="container-fluid">
         <section
             class="hero is-fullheight is-bold"
-            style="color-scheme: light"
+            style="color-scheme: only light"
         >
             <div class="hero-body">
                 <div class="container has-text-centered content">
@@ -770,7 +770,7 @@
                             </div>
                         </div>
                         <p class="block"
-                            >For when you want to quickly spin up a something quick without having to worry about
+                            >For when you want to quickly spin up something quick without having to worry about
                             <code>v-if</code> or <code>refs</code>
                         </p>
                         <a name="snackbar" />
