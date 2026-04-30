@@ -13,12 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v6.0.3
         with:
-          node-version: '25'
           cache: 'npm'
 
-      - run: npm ci
+      - run: pnpm i
 
       - name: Build website
         run: |
