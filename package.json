@@ -1,6 +1,6 @@
 {
     "name": "psoda",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Refreshingly simple Tooltips & Modals for Vue.",
     "keywords": [
         "Dialog",
@@ -46,8 +46,7 @@
         "prepare": "vp config",
         "postversion": "vp run build"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@tsdown/css": "^0.21.10",
         "@types/node": "^25.5.0",
