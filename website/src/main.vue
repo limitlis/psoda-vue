@@ -65,7 +65,8 @@
                             </a>
                         </div>
                         <div class="level-item is-justify-content-flex-start">
-                            <button class="button is-rounded is-dark">Docs </button>
+                            <a href="#documentation"
+                            class="button is-rounded is-dark">Docs </a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +77,7 @@
             id="features"
         >
             <div class="has-text-centered">
-                <h3 class="title is-2 mb-1">Full of <s v-psoda-fizz:bottom="'BYOFlavor'">flavor</s> features</h3>
+                <h3 class="title is-2 mb-1">Full of <s v-psoda-fizz:bottom="'B.Y.O.Flavor'">flavor</s> features</h3>
                 <p class="subtitle">Everything you need for delightful tooltips and dialogs</p>
             </div>
 
@@ -609,6 +610,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="level-right">
+                        <div class="level-item">
+                            <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+                                <ul>
+                                    <li><a href="#fizz">Fizz</a></li>
+                                    <li><a href="#pop">Pop</a></li>
+                                    <li><a href="#utilities">Utilities</a></li>
+                                    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
                 <div class="is-bg-gray-900 rounded-2xl overflow-x-auto">
                     <a name="fizz" />
@@ -747,7 +760,7 @@
                     </div>
 
                     <div class="block">
-                        <a name="snackbar" />
+                        <a name="utilities" />
                         <div class="level mb-3">
                             <div class="level-left">
                                 <div class="level-item">
@@ -761,7 +774,7 @@
                             >For when you want to quickly spin up a something quick without having to worry about
                             <code>v-if</code> or <code>refs</code>
                         </p>
-
+                        <a name="snackbar" />
                         <h6 class="title is-5 mt-6">Snackbar <span class="tag is-info is-small">useSnackbar</span></h6>
                         <p class="block"
                             >The <code>useSnackbar</code> composable will bring up a timed dialog anchored to the bottom
@@ -801,25 +814,24 @@
                         <div class="level is-mobile">
                             <div class="level-itemm">
                                 <a
-                                    href="https://github.com/limitlis/psoda"
-                                    class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-github w-5 h-5"
+                                    href="https://github.com/limitlis/psoda-vue"
+                                    target="_blank"
+                                    class="button is-primary is-ghost">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="-2 -2 28 28"><path fill="currentColor" d="M18.88 1.099Q17.78-.001 16.233 0H3.746Q2.198 0 1.099 1.099Q-.001 2.199 0 3.746v12.487q0 1.548 1.099 2.647q1.1 1.1 2.647 1.099H6.66q.285 0 .429-.02a.5.5 0 0 0 .286-.169q.143-.15.143-.435l-.007-.885q-.006-.846-.006-1.34l-.3.052q-.285.052-.721.046a5.6 5.6 0 0 1-.904-.091a2 2 0 0 1-.872-.39a1.65 1.65 0 0 1-.572-.8l-.13-.3a3.3 3.3 0 0 0-.41-.663q-.28-.364-.566-.494l-.09-.065a1 1 0 0 1-.17-.156a.7.7 0 0 1-.117-.182q-.039-.092.065-.15q.104-.06.378-.059l.26.04q.26.051.643.311a2.1 2.1 0 0 1 .631.677q.3.532.722.813q.423.28.852.28t.742-.065a2.6 2.6 0 0 0 .585-.196q.117-.871.637-1.34a9 9 0 0 1-1.333-.234a5.3 5.3 0 0 1-1.223-.507a3.5 3.5 0 0 1-1.047-.872q-.416-.52-.683-1.365q-.266-.846-.266-1.952q0-1.573 1.027-2.68q-.48-1.183.091-2.652q.378-.118 1.119.175t1.086.5q.345.21.553.352a9.2 9.2 0 0 1 2.497-.338q1.288 0 2.498.338l.494-.312a7 7 0 0 1 1.197-.572q.689-.26 1.054-.143q.585 1.47.103 2.653q1.028 1.105 1.028 2.68q0 1.106-.267 1.957q-.266.852-.689 1.366a3.7 3.7 0 0 1-1.053.865q-.63.351-1.223.507a9 9 0 0 1-1.333.235q.675.585.676 1.846v3.11q0 .22.065.357a.36.36 0 0 0 .208.189q.143.052.254.064q.111.014.318.013h2.914q1.548 0 2.647-1.099t1.099-2.647V3.746q0-1.548-1.1-2.647z"/></svg>
+                                    <!-- <div class="image is-square is-responsive">
+                                    </div> -->
+                            </a>
+                            </div>
+                            <div class="level-item">
+                                <a
+                                    href="https://npmx.dev/package/psoda"
+                                    target="_blank"
+                                    class="button is-primary is-ghost"
                                     >
-                                        <path
-                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-                                        ></path>
-                                        <path d="M9 18c-4.51 2-5-2-7-2"></path></svg
-                                ></a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 28 28"><path fill="currentColor" d="M22 2V1H2v1H1v20h1v1h20v-1h1V2zM12 8v11H5V5h14v14h-3V8z"/></svg>
+                                    <!-- <div class="image is-square is-responsive">
+                                    </div> -->
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -899,12 +911,9 @@ app.use(psoda);`);
         --bulma-body-family: 'Quicksand', sans-serif;
     }
 
-    /* *:not(pre, code) {
-    font-family: Quicksand, sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-} */
-
+    html {
+        scroll-behavior: smooth;
+    }
     .hero:first-of-type::before {
         content: '';
         position: absolute;
