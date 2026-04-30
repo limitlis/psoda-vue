@@ -10,15 +10,15 @@
         "Tooltip",
         "Vue"
     ],
-    "homepage": "https://github.com/limitlis/psoda#readme",
+    "homepage": "https://limitlis.github.io/psoda-vue/",
     "bugs": {
-        "url": "https://github.com/limitlis/psoda/issues"
+        "url": "https://github.com/limitlis/psoda-vue/issues"
     },
     "license": "MIT",
     "author": "Cesar Vargas<cesar@limitlis.com>",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/limitlis/psoda.git"
+        "url": "git+https://github.com/limitlis/psoda-vue.git"
     },
     "files": [
         "dist"
