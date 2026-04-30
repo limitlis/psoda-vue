@@ -61,11 +61,11 @@
                             <a
                                 href="#features"
                                 class="button is-rounded is-light"
-                                >Get Started
+                                >Overview
                             </a>
                         </div>
                         <div class="level-item is-justify-content-flex-start">
-                            <a href="#documentation"
+                            <a href="#installation"
                             class="button is-rounded is-dark">Docs </a>
                         </div>
                     </div>
@@ -614,10 +614,9 @@
                         <div class="level-item">
                             <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
                                 <ul>
-                                    <li><a href="#fizz">Fizz</a></li>
-                                    <li><a href="#pop">Pop</a></li>
-                                    <li><a href="#utilities">Utilities</a></li>
-                                    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+                                    <li v-psoda-fizz="'Tooltips'"><a href="#fizz">Fizz</a></li>
+                                    <li v-psoda-fizz="'Modals'"><a href="#pop">Pop</a></li>
+                                    <li v-psoda-fizz="'Snackbars'"><a href="#utilities">Utilities</a></li>
                                 </ul>
                             </nav>
                         </div>
