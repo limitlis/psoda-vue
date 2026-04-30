@@ -18,7 +18,11 @@ jobs:
           cache: true
 
       - run: pnpm i
-
+      
+      - name: Bundle Package
+        run: |
+          npx vp pack
+      
       - name: Build website
         run: |
           npx vp run psoda-website#build
