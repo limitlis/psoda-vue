@@ -9,9 +9,17 @@ export default defineConfig({
     base: '/',
     staged: {
         '*': 'vp check --fix',
+  },
+    css: {
+        lightningcss: {
+            errorRecovery: true
+            // Exclude specific features, e.g.,
+            // skip polyfills for modern browsers
+            // 0x1fffff skips all polyfills
+            // exclude: 0x1fffff,
+        },
     },
     fmt: {
-        semi: false,
         singleQuote: true,
     },
     lint: {
