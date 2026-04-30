@@ -6,8 +6,8 @@
         "Dialog",
         "Modal",
         "Popover",
-        "Tooltip",
         "Snackbar",
+        "Tooltip",
         "Vue"
     ],
     "homepage": "https://github.com/limitlis/psoda#readme",
@@ -25,11 +25,12 @@
     ],
     "type": "module",
     "sideEffects": false,
-    "types": "./dist/index.d.ts",
+    "types": "./dist/vue/index.d.ts",
     "exports": {
         ".": "./dist/vue/index.js",
         "./package.json": "./package.json",
-        "./style.css": "./dist/style.css"
+        "./style.css": "./dist/style.css",
+        "./types": "./dist/vue/index.d.ts"
     },
     "publishConfig": {
         "access": "public"
@@ -44,6 +45,8 @@
         "prepublishOnly": "vp run build",
         "prepare": "vp config",
         "postversion": "vp run build"
+    },
+    "dependencies": {
     },
     "devDependencies": {
         "@tsdown/css": "^0.21.10",
