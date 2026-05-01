@@ -29,8 +29,7 @@
     "exports": {
         ".": "./dist/vue/index.js",
         "./package.json": "./package.json",
-        "./style.css": "./dist/style.css",
-        "./types": "./dist/vue/index.d.ts"
+        "./style.css": "./dist/style.css"
     },
     "publishConfig": {
         "access": "public"
