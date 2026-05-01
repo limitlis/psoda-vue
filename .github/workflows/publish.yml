@@ -20,4 +20,4 @@ jobs:
           cache: true
       - run: pnpm i
       - run: npx vp pack
-      - run: pnpm publish --dry-run
+      - run: pnpm publish
