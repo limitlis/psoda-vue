@@ -13,7 +13,7 @@
                             aria-label="psoda"
                         >
                             <span v-psoda-fizz:left="'Popovers (Tooltips)'"><span style="opacity: 0.6">::</span>p</span>
-                            <span v-psoda-fizz:top="'Snackbars (soon)'">s</span>
+                            <span v-psoda-fizz:top="'Snackbars'">s</span>
                             <span v-psoda-fizz:bottom="'Overlays (soon)'">o</span>
                             <span v-psoda-fizz:top="'Dialogs (Modals)'">d</span>
                             <span v-psoda-fizz:right="'Alerts'">a</span>
