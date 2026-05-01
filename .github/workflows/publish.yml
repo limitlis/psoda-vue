@@ -25,4 +25,4 @@ jobs:
           cache: true
       - run: pnpm i
       - run: pnpm pack
-      - run: npm publish --provenance
+      - run: NODE_AUTH_TOKEN="" npm publish
