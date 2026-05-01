@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: main
       - uses: pnpm/action-setup@v6.0.3
         with:
           registry-url: 'https://registry.npmjs.org'
