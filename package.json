@@ -1,6 +1,6 @@
 {
     "name": "psoda",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Refreshingly simple Tooltips & Modals for Vue.",
     "keywords": [
         "Dialog",
