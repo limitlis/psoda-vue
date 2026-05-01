@@ -5,24 +5,32 @@ on:
     tags:
       - 'v*'
 
-permissions:
-  id-token: write # Required for OIDC
-  contents: read
-
 jobs:
   publish-package:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Required for trusted publishing
+      packages: write
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout Code
+        uses: actions/checkout@v6
         with:
           ref: main
-      - uses: actions/setup-node@v6
+
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1 # Optimized for Vite+
         with:
-          node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v6.0.3
-        with:
-          cache: true
-      - run: pnpm i
-      - run: pnpm pack
-      - run: NODE_AUTH_TOKEN="" npm publish
+          node-version: 24
+          # cache: 'npm' # Recommended for faster builds
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Package
+        run: vp pack # Uses Vite+ builder
+
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Set in GitHub Secrets
