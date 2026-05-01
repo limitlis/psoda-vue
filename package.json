@@ -42,9 +42,8 @@
         "pack": "vp run pack",
         "test": "vp test",
         "check": "vp check",
-        "prepublishOnly": "vp run build",
-        "prepare": "vp config",
-        "postversion": "vp run build"
+        "prepublishOnly": "vp pack",
+        "prepare": "vp config"
     },
     "dependencies": {},
     "devDependencies": {
