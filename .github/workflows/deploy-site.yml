@@ -1,40 +1,40 @@
-# name: Build & Deploy Site
+name: Build & Deploy Site
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   deploy-website:
-#     name: Build & Deploy Website
-#     runs-on: ubuntu-latest
-#     permissions:
-#         contents: write
-#         pages: write
-#     steps:
-#       - uses: actions/checkout@v4
+jobs:
+  deploy-website:
+    if: false # turning off workflow
+    name: Build & Deploy Website
+    runs-on: ubuntu-latest
+    permissions:
+        contents: write
+        pages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v6.0.3
+        with:
+          cache: true
 
-#       - uses: pnpm/action-setup@v6.0.3
-#         with:
-#           cache: true
+      - run: pnpm i
 
-#       - run: pnpm i
-      
-#       - name: Bundle Package
-#         run: |
-#           npx vp pack
-      
-#       - name: Build website
-#         run: |
-#           npx vp run psoda-website#build
+      - name: Bundle Package
+        run: |
+          npx vp pack
 
-#       - name: Deploy to GitHub Pages
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./website/dist
+      - name: Build website
+        run: |
+          npx vp run psoda-website#build
 
-#       - name: Verify deployment
-#         run: |
-#           echo "Website deployed to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/dist
+
+      - name: Verify deployment
+        run: |
+          echo "Website deployed to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
