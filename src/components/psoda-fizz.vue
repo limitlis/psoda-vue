@@ -274,16 +274,4 @@
             }
         }
     }
-
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: all 0.5s ease allow-discrete;
-    }
-
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-        width: 0;
-        display: none;
-    }
 </style>
