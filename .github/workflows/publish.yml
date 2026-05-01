@@ -25,7 +25,7 @@ jobs:
           # cache: 'npm' # Recommended for faster builds
 
       - name: Install Dependencies
-        run: npm ci
+        run: vp i
 
       - name: Build Package
         run: vp pack # Uses Vite+ builder

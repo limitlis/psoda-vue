@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-website:
-    # if: false # turning off workflow
+    if: false # turning off workflow
     name: Build & Deploy Website
     runs-on: ubuntu-latest
     permissions:
