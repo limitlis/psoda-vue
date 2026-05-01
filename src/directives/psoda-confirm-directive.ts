@@ -45,9 +45,7 @@ export default {
                     dialog.showModal();
                     dialog.onclose = async () => {
                         if (dialog.returnValue === 'confirm') {
-                            await Promise.all(
-                                dialog.getAnimations().map(anim => anim.finished)
-                            ).finally(() => {
+                            await Promise.all(dialog.getAnimations().map((anim) => anim.finished)).finally(() => {
                                 const details = {
                                     ...('detail' in e && { detail: (e as any).detail }),
                                 };
@@ -56,7 +54,7 @@ export default {
                                     cancelable: true,
                                     detail: { ...details, CONFIRMED: true },
                                 }) as Event;
-    
+
                                 el.dispatchEvent(newEvent);
                             });
                         }

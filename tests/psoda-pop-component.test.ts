@@ -18,16 +18,16 @@ test('Psoda Pop component renders', async () => {
         attachTo: document.body,
         global: {
             components: {
-                PsodaPop
-            }
+                PsodaPop,
+            },
         },
     });
 
     const button = wrapper.find('.trigger');
     const pop = wrapper.find('dialog');
-    
+
     expect(button.exists()).toBe(true);
     expect(pop.exists()).toBe(true);
-    expect(pop.find('.dialog-content').text()).toContain('Here\'s a simple modal');
+    expect(pop.find('.dialog-content').text()).toContain("Here's a simple modal");
     expect(pop.exists()).toBe(true);
 });

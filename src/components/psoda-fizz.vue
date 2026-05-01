@@ -99,7 +99,7 @@
         box-sizing: border-box;
         margin: 0 0 var(--tether-size) 0;
         clip-path: inset(var(--tether-offset)) margin-box;
-        
+
         backface-visibility: hidden;
         overflow: visible;
         min-width: 8ch;
@@ -109,7 +109,7 @@
         color: var(--psoda-color, white);
         border: var(--psoda-border);
         padding: 0.7rem;
-        padding-bottom: calc(initial + .1px);
+        padding-bottom: calc(initial + 0.1px);
         border-radius: 6px;
         box-shadow: none;
         outline: 2px solid transparent;

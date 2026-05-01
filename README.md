@@ -87,6 +87,7 @@ When want a quick way to add a confirmation prompt to a destructive action. Add 
 ```
 
 ### Utilities [Composables]
+
 For when you want to quickly spin up a something quick without having to worry about v-if or refs
 
 #### Snackbar [useSnackbar]
@@ -105,8 +106,8 @@ The useSnackbar composable will bring up a timed dialog anchored to the bottom o
         });
     }
 </script>
-
 ```
+
 ---
 
 ## Contributing
