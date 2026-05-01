@@ -5,4 +5,3 @@
 [limitlis.github.io/psoda-vue](https://limitlis.github.io/psoda-vue)
 
 [github](https://github.com/limitlis/psoda-vue)
-

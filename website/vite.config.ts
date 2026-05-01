@@ -9,10 +9,10 @@ export default defineConfig({
     base: '/psoda-vue/',
     staged: {
         '*': 'vp check --fix',
-  },
+    },
     css: {
         lightningcss: {
-            errorRecovery: true
+            errorRecovery: true,
             // Exclude specific features, e.g.,
             // skip polyfills for modern browsers
             // 0x1fffff skips all polyfills

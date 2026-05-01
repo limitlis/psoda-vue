@@ -182,7 +182,6 @@
     @starting-style {
         .pop:not(.snackbar) {
             transition-behavior: allow-discrete;
-
         }
         .pop:not(.snackbar)[open] {
             scale: 0;
