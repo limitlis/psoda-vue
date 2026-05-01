@@ -43,18 +43,22 @@ export default {
                         (renderedNode.component as any).exposed.uid.value as string
                     ] as HTMLDialogElement;
                     dialog.showModal();
-                    dialog.onclose = () => {
+                    dialog.onclose = async () => {
                         if (dialog.returnValue === 'confirm') {
-                            const details = {
-                                ...('detail' in e && { detail: (e as any).detail }),
-                            };
-                            const newEvent = new CustomEvent(e.type, {
-                                bubbles: true,
-                                cancelable: true,
-                                detail: { ...details, CONFIRMED: true },
-                            }) as Event;
-
-                            el.dispatchEvent(newEvent);
+                            await Promise.all(
+                                dialog.getAnimations().map(anim => anim.finished)
+                            ).finally(() => {
+                                const details = {
+                                    ...('detail' in e && { detail: (e as any).detail }),
+                                };
+                                const newEvent = new CustomEvent(e.type, {
+                                    bubbles: true,
+                                    cancelable: true,
+                                    detail: { ...details, CONFIRMED: true },
+                                }) as Event;
+    
+                                el.dispatchEvent(newEvent);
+                            });
                         }
                     };
                 }

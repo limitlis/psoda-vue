@@ -129,8 +129,8 @@
         transition:
             opacity 0.25s,
             scale 0.25s cubic-bezier(0.11, 1.06, 0.72, 1.41),
-            overlay 0.25s,
-            display 0.4s;
+            overlay 0.25s allow-discrete,
+            display 0.4s allow-discrete;
 
         &[open] {
             scale: 1;
@@ -183,19 +183,19 @@
         .pop:not(.snackbar) {
             transition-behavior: allow-discrete;
 
-            &[open] {
-                scale: 0;
-                opacity: 0;
-            }
+        }
+        .pop:not(.snackbar)[open] {
+            scale: 0;
+            opacity: 0;
         }
         .pop.snackbar {
             transform: translateY(0);
             transition-behavior: allow-discrete;
-            &[open] {
-                transform: translateY(100%);
-                scale: 1;
-                opacity: 1;
-            }
+        }
+        .pop.snackbar[open] {
+            transform: translateY(100%);
+            scale: 1;
+            opacity: 1;
         }
     }
 
