@@ -1,4 +1,4 @@
-name: Release & Deploy
+name: Build & Deploy Site
 
 on:
   push:

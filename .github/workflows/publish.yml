@@ -1,0 +1,23 @@
+name: Release & Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
+jobs:
+  publish-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6.0.3
+        with:
+          registry-url: 'https://registry.npmjs.org'
+          cache: true
+      - run: pnpm i
+      - run: npx vp pack
+      - run: pnpm publish --dry-run
