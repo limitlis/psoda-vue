@@ -12,6 +12,12 @@ export function usePsoda() {
             popTarget.showModal();
         }
     }
+    function openSnackbar(_event?: PointerEvent) {
+        const popTarget = (window as any)[uid.value] as HTMLDialogElement;
+        if (popTarget) {
+            popTarget.show();
+        }
+    }
     function close(_event?: PointerEvent) {
         const popTarget = (window as any)[`${uid.value}`] as HTMLDialogElement;
         if (popTarget) {
@@ -19,5 +25,5 @@ export function usePsoda() {
         }
     }
 
-    return { uid, anchorName, open, close, confirm };
+    return { uid, anchorName, open, openSnackbar, close, confirm };
 }

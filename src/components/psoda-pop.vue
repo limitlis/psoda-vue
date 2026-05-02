@@ -94,8 +94,8 @@
         popover: 'auto',
         position: 'top center',
     });
-    const { uid, open, close } = usePsoda();
-    defineExpose({ uid, open, close });
+    const { uid, open, openSnackbar, close } = usePsoda();
+    defineExpose({ uid, open, openSnackbar, close });
 </script>
 
 <style>
@@ -158,12 +158,15 @@
     }
     .pop.snackbar {
         top: auto;
-        max-width: var(--psoda-snackbar-max-width, 80vw);
+        max-width: var(--psoda-snackbar-max-width, 60vw);
         min-height: 80px;
         overscroll-behavior: none;
         transform: translateY(100%);
         scale: 1;
         opacity: 1;
+        position: fixed;
+        bottom: 0;
+        
         .dialog-inner {
             flex-direction: row;
             footer {
