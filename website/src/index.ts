@@ -5,6 +5,6 @@ import psoda from 'psoda';
 
 import 'psoda/style.css';
 const app = createApp(main);
-app.use(psoda as any);
+app.use(psoda);
 
 app.mount('#app');

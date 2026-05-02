@@ -80,7 +80,7 @@
             id="features"
         >
             <div class="has-text-centered">
-                <h3 class="title is-2 mb-1">Full of <s v-psoda-fizz:bottom="'B.Y.O.Flavor'">flavor</s> features</h3>
+                <h3 class="title is-2 mb-1">Full of <s style="opacity: 0.5;">flavor</s> features</h3>
                 <p class="subtitle">Everything you need for delightful tooltips and dialogs</p>
             </div>
 
@@ -416,7 +416,6 @@
             </div>
         </section>
         <section class="section container">
-            <a name="installation" />
             <div
                 class="block py-4"
                 id="gettingStarted"
@@ -425,6 +424,7 @@
                     <div class="level-left">
                         <div class="level-item">
                             <div class="is-flex is-align-items-center is-gap-3">
+                                
                                 <figure
                                     class="image is-48x48 is-rounded is-flex is-justify-content-center is-align-items-center"
                                     style="
@@ -456,7 +456,10 @@
                                         ></line>
                                     </svg>
                                 </figure>
-                                <h4 class="title is-4">Installation</h4>
+                                <h4 class="title is-4">
+                                    <a name="installation" href="#installation" class="anchor-link">#</a>
+                                    Installation
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -532,7 +535,10 @@
                                         />
                                     </svg>
                                 </figure>
-                                <h4 class="title is-4">Global Registration</h4>
+                                <h4 class="title is-4">
+                                    <a name="registration" href="#registration" class="anchor-link">#</a>
+                                    Global Registration
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -553,7 +559,6 @@
                 class="block py-4"
                 id="gettingStarted"
             >
-                <a name="documentation" />
                 <div class="level">
                     <div class="level-left">
                         <div class="level-item">
@@ -585,7 +590,10 @@
                                         />
                                     </svg>
                                 </figure>
-                                <h4 class="title is-4">Documentation</h4>
+                                <h4 class="title is-4">
+                                    <a name="documentation" href="#documentation" class="anchor-link">#</a>
+                                    Documentation
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -605,23 +613,27 @@
                     </div>
                 </div>
                 <div class="is-bg-gray-900 rounded-2xl overflow-x-auto">
-                    <a name="fizz" />
                     <div class="block">
                         <div class="level mb-3">
                             <div class="level-left">
                                 <div class="level-item">
-                                    <h6 class="title is-4 mt-6 mb-1"
-                                        >Fizz <span class="tag is-primary is-small">Tooltips</span>
+                                    <h6 class="title is-4 mt-6 mb-1">
+                                        <a name="fizz" href="#fizz" class="anchor-link">#</a>
+                                        Fizz <span class="tag is-primary is-small">Tooltips</span>
                                     </h6>
                                 </div>
                             </div>
                         </div>
-                        <p class="block"
-                            >The Fizz component (or directive) is a utility wrapper around the native HTML
-                            <strong>Popover</strong>
-                            API. Making it easy to add tooltips to your Vue applications.
-                        </p>
-                        <h6 class="title is-5 mt-6">Component usage</h6>
+                        <div class="content block">
+                            <p>The Fizz component (or directive) is a utility wrapper around the native HTML
+                                <strong>Popover</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank"><sup class="has-text-link">[msdn]</sup></a>
+                                API. Making it easy to add tooltips to your Vue applications.
+                            </p>
+                        </div>
+                        <h6 class="title is-5 mt-6">
+                            <a name="fizz-component" href="#fizz-component" class="anchor-link">#</a>
+                            Component usage
+                        </h6>
                         <div class="block example-block">
                             <div class="header">
                                 <psoda-fizz
@@ -643,10 +655,17 @@
                             </div>
                         </div>
 
-                        <h6 class="title is-5 mt-6">Directive usage</h6>
+                        <h6 class="title is-5 mt-6">
+                            <a name="fizz-directive" href="#fizz-directive" class="anchor-link">#</a>
+                            Directive usage
+                        </h6>
+                        <div class="content block">
+                            <p>You can optionally specify a preferred direction by appending one of the following arguments <code>:bottom</code>, <code>:right</code>, or <code>:left</code>.</p>
+                            <p><span class="tag is-info has-text-weight-bold">Info:</span> If the tooltip doesn't have room in the desired direction it will use the opposite side automatically.</p>
+                        </div>
                         <div class="block example-block">
                             <div class="header"
-                                ><span v-psoda-fizz="'For an instant tooltip!'">Add v-psoda-fizz to any element. </span>
+                                ><span v-psoda-fizz:bottom="'For an instant tooltip!'">Add v-psoda-fizz to any element.</span>
                             </div>
                             <div class="content">
                                 <shikiView
@@ -657,23 +676,29 @@
                         </div>
                     </div>
                     <div class="block">
-                        <a name="pop" />
+                        
                         <div class="level mb-3">
                             <div class="level-left">
                                 <div class="level-item">
-                                    <h6 class="title is-4 mt-5 mb-1"
-                                        >Pop <span class="tag is-primary is-small">Modals</span>
+                                    <h6 class="title is-4 mt-5 mb-1">
+                                        <a name="pop" href="#pop" class="anchor-link">#</a>
+                                        Pop <span class="tag is-primary is-small">Modals</span>
                                     </h6>
                                 </div>
                             </div>
                         </div>
-                        <p class="block"
-                            >The Pop component is a utility wrapper around the native HTML
-                            <strong>dialog</strong>
-                            element.
-                        </p>
+                        <div class="content block">
+                            <p>The Pop component is a utility wrapper around the native HTML
+                                <strong>dialog</strong> element. Modals can be dismissed with the <code>esc</code> key.
+                            </p>
+                            <p><span class="tag is-info has-text-weight-bold">Info:</span> A modal has a stylable <code>::backdrop</code> that will make the rest of the page inert.</p>
 
-                        <h6 class="title is-5 mt-6">Basic Modal</h6>
+                        </div>
+
+                        <h6 class="title is-5 mt-6">
+                            <a name="basic-modal" href="#basic-modal" class="anchor-link">#</a>
+                            Basic Modal
+                        </h6>
                         <div class="block example-block">
                             <div class="header">
                                 <psoda-pop>
@@ -696,7 +721,10 @@
                             </div>
                         </div>
 
-                        <h6 class="title is-5 mt-6">Easy Confirmation Modal</h6>
+                        <h6 class="title is-5 mt-6">
+                            <a name="easy-confirm" href="#easy-confirm" class="anchor-link">#</a>
+                            Easy Confirmation Modal
+                        </h6>
                         <p class="block"
                             >Add the <code>v-psoda-confirm"&lt;string&gt;"</code> directive to an element that will
                             perform a destructive action.</p
@@ -732,22 +760,25 @@
                     </div>
 
                     <div class="block">
-                        <a name="utilities" />
+                        
                         <div class="level mb-3">
                             <div class="level-left">
                                 <div class="level-item">
-                                    <h6 class="title is-4 mt-5 mb-1"
-                                        >Utilities <span class="tag is-primary is-small">Composables</span></h6
+                                    <h6 class="title is-4 mt-5 mb-1">
+                                        <a name="utilities" href="#utilities" class="anchor-link">#</a>
+                                        Utilities <span class="tag is-primary is-small">Composables</span></h6
                                     >
                                 </div>
                             </div>
                         </div>
                         <p class="block"
                             >For when you want to quickly spin up something quick without having to worry about
-                            <code>v-if</code> or <code>refs</code>
+                            <code>v-if</code> or <code>refs</code>.
                         </p>
-                        <a name="snackbar" />
-                        <h6 class="title is-5 mt-6">Snackbar <span class="tag is-info is-small">useSnackbar</span></h6>
+                        
+                        <h6 class="title is-5 mt-6">
+                            <a name="snackbar" href="#snackbar" class="anchor-link">#</a> Snackbar <span class="tag is-info is-small">useSnackbar</span>
+                        </h6>
                         <p class="block"
                             >The <code>useSnackbar</code> composable will bring up a timed dialog anchored to the bottom
                             of the page.</p
@@ -842,14 +873,11 @@
     import { ref, computed } from 'vue';
     import pkg from '../../package.json';
     import shikiView from './components/shikiView.vue';
-    //@ts-ignore
-    // import { HighCode } from 'vue-highlight-code';
 
     import { useSnackbar } from 'psoda';
 
     import psodaFizzExample from './examples/fizz-component-example.vue?raw';
     import psodaFizzDirectiveExample from './examples/fizz-directive-example.vue?raw';
-
     import psodaPopExample from './examples/pop-component-example.vue?raw';
 
     import psodaConfirmExample from './examples/pop-confirm-directive-example.vue?raw';
@@ -1151,6 +1179,26 @@ app.use(psoda);`);
     @media screen and (max-width: 600px) {
         .version {
             transform: translate(-55px, 15px);
+        }
+    }
+
+    .anchor-link {
+        position: absolute;
+        
+        opacity: 0;
+        transform: rotate(180deg);
+        transition: display 300ms ease-in-out allow-discrete,
+            opacity 180ms ease-in-out,
+            transform 300ms cubic-bezier(0.18,0.89,0.32,1.27) allow-discrete;
+    }
+    :is(h1, h2, h3, h4, h5, h6):has(.anchor-link) {
+        padding-left: 20px;
+        transform: translateX(-20px);
+        &:hover {
+            .anchor-link {
+                opacity: 1;
+                transform: translateX(-20px) rotate(00deg);
+            }
         }
     }
 </style>
