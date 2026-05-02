@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [Unreleased](https://github.com/limitlis/psoda-vue.git
-/compare/v0.0.10...HEAD)
+#### [v0.0.11](https://github.com/limitlis/psoda-vue.git
+/compare/v0.0.10...v0.0.11)
 
 - feat(site): add Shiki, and misc styling updates [`9e2187f`](https://github.com/limitlis/psoda-vue.git
 /commit/9e2187f5f07f7bf7f80e5e12abb4d9edaf0c0eb3)
+- feat: adding auto-changelog [`7c906cf`](https://github.com/limitlis/psoda-vue.git
+/commit/7c906cf113490fbcb46bd51f82bb7f0fb17a9799)
+- feat(site): Misc site updates [`e27d8ee`](https://github.com/limitlis/psoda-vue.git
+/commit/e27d8eeccefdd0bae2c1de58dae86e7f7931cba1)
+- feat(snackbar): Snackbar updates [`f159c32`](https://github.com/limitlis/psoda-vue.git
+/commit/f159c32153907fb3c070d6603741e98b9adaecf6)
 
 #### [v0.0.10](https://github.com/limitlis/psoda-vue.git
 /compare/v0.0.9...v0.0.10)
