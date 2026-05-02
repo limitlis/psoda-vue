@@ -1,37 +1,37 @@
 name: Release & Deploy
 
 on:
-  push:
-    tags:
-      - 'v*'
+    push:
+        tags:
+            - 'v*'
 
 jobs:
-  publish-package:
-    runs-on: ubuntu-latest
-    environment: publish
-    permissions:
-      contents: read
-      id-token: write # Required for trusted publishing
-      packages: write
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v6
-        with:
-          ref: main
+    publish-package:
+        runs-on: ubuntu-latest
+        environment: publish
+        permissions:
+            contents: read
+            id-token: write # Required for trusted publishing
+            packages: write
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v6
+              with:
+                  ref: main
 
-      - name: Setup Vite+
-        uses: voidzero-dev/setup-vp@v1 # Optimized for Vite+
-        with:
-          node-version: 24
-          # cache: 'npm' # Recommended for faster builds
+            - name: Setup Vite+
+              uses: voidzero-dev/setup-vp@v1 # Optimized for Vite+
+              with:
+                  node-version: 24
+                  # cache: 'npm' # Recommended for faster builds
 
-      - name: Install Dependencies
-        run: vp i
+            - name: Install Dependencies
+              run: vp i
 
-      - name: Build Package
-        run: vp pack # Uses Vite+ builder
+            - name: Build Package
+              run: vp pack # Uses Vite+ builder
 
-      - name: Publish to NPM
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Set in GitHub Secrets
+            - name: Publish to NPM
+              run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Set in GitHub Secrets

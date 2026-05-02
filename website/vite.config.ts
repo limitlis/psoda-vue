@@ -19,6 +19,9 @@ export default defineConfig({
             // exclude: 0x1fffff,
         },
     },
+    build: {
+        target: ['es2025'],
+    },
     fmt: {
         singleQuote: true,
     },

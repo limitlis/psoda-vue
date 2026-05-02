@@ -19,7 +19,6 @@
     "dependencies": {
         "psoda": "workspace:*",
         "vue": "^3.5.31",
-        "vue-highlight-code": "^0.2.0",
         "vue-router": "^5.0.4"
     },
     "devDependencies": {
@@ -40,6 +39,7 @@
         "jiti": "^2.6.1",
         "jsdom": "^29.0.1",
         "npm-run-all2": "^8.0.4",
+        "shiki": "^4.0.2",
         "typescript": "~6.0.0",
         "vite": "npm:@voidzero-dev/vite-plus-core@latest",
         "vite-plugin-vue-devtools": "^8.1.1",

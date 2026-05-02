@@ -14,10 +14,10 @@
                         >
                             <span v-psoda-fizz:left="'Popovers (Tooltips)'"><span style="opacity: 0.6">::</span>p</span>
                             <span v-psoda-fizz:top="'Snackbars'">s</span>
-                            <span v-psoda-fizz:bottom="'Overlays (soon)'">o</span>
+                            <span v-psoda-fizz:bottom="'Overlays'">o</span>
                             <span v-psoda-fizz:top="'Dialogs (Modals)'">d</span>
                             <span v-psoda-fizz:right="'Alerts'">a</span>
-                            <span class="tag is-dark">{{ version }}</span>
+                            <span class="tag is-dark version">{{ version }}</span>
                         </h1>
 
                         <h2 class="title is-5 has-text-dark my-0">Refreshingly simple Tooltips & Modals for Vue</h2>
@@ -492,39 +492,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="is-bg-gray-900 rounded-2xl overflow-x-auto">
-                    <HighCode
-                        v-if="packageManager === 'vite+'"
-                        codeValue="vp add psoda"
-                        lang="shell"
-                        width="100%"
-                        class="p-0"
-                        max-height="100px"
-                    />
-                    <HighCode
-                        v-if="packageManager === 'pnpm'"
-                        codeValue="pnpm add psoda"
-                        lang="shell"
-                        width="100%"
-                        class="p-0"
-                        max-height="100px"
-                    />
-                    <HighCode
-                        v-if="packageManager === 'npm'"
-                        codeValue="npm install psoda"
-                        lang="shell"
-                        width="100%"
-                        class="p-0"
-                        max-height="100px"
-                    />
-                    <HighCode
-                        v-if="packageManager === 'yarn'"
-                        codeValue="yarn add psoda"
-                        lang="shell"
-                        width="100%"
-                        class="p-0"
-                        max-height="100px"
-                    />
+                <div class="block example-block">
+                    <div class="content">
+                        <shikiView
+                            :input="installCode"
+                            lang="shell"
+                        />
+                    </div>
                 </div>
             </div>
             <div class="block py-4">
@@ -566,12 +540,14 @@
                 <div class="block">
                     <p>Register globally to have access to all directives & components</p>
                 </div>
-                <HighCode
-                    :codeValue="usageCode"
-                    lang="javascript"
-                    width="100%"
-                    class="p-0"
-                />
+                <div class="block example-block">
+                    <div class="content">
+                        <shikiView
+                            :input="usageCode"
+                            lang="js"
+                        />
+                    </div>
+                </div>
             </div>
             <div
                 class="block py-4"
@@ -660,11 +636,9 @@
                                 </psoda-fizz>
                             </div>
                             <div class="content">
-                                <HighCode
-                                    :codeValue="psodaFizzExample"
-                                    :lang="'vue'"
-                                    class="p-0"
-                                    width="100%"
+                                <shikiView
+                                    :input="psodaFizzExample"
+                                    lang="vue"
                                 />
                             </div>
                         </div>
@@ -675,12 +649,9 @@
                                 ><span v-psoda-fizz="'For an instant tooltip!'">Add v-psoda-fizz to any element. </span>
                             </div>
                             <div class="content">
-                                <HighCode
-                                    :codeValue="psodaFizzDirectiveExample"
+                                <shikiView
+                                    :input="psodaFizzDirectiveExample"
                                     lang="vue"
-                                    class="p-0"
-                                    width="100%"
-                                    height="auto"
                                 />
                             </div>
                         </div>
@@ -718,11 +689,9 @@
                                 </psoda-pop>
                             </div>
                             <div class="content">
-                                <HighCode
-                                    :codeValue="psodaPopExample"
-                                    lang="vue"
-                                    class="p-0"
-                                    width="100%"
+                                <shikiView
+                                    :input="psodaPopExample"
+                                    lang="vue-html"
                                 />
                             </div>
                         </div>
@@ -754,11 +723,9 @@
                                 </div>
                             </div>
                             <div class="content">
-                                <HighCode
-                                    :codeValue="psodaConfirmExample"
+                                <shikiView
+                                    :input="psodaConfirmExample"
                                     lang="vue"
-                                    class="p-0"
-                                    width="100%"
                                 />
                             </div>
                         </div>
@@ -794,12 +761,7 @@
                                 >
                             </div>
                             <div class="content">
-                                <HighCode
-                                    :codeValue="snackbarExample"
-                                    lang="vue"
-                                    class="p-0"
-                                    width="100%"
-                                />
+                                <shikiView :input="snackbarExample" />
                             </div>
                         </div>
                     </div>
@@ -821,13 +783,13 @@
                                 <a
                                     href="https://github.com/limitlis/psoda-vue"
                                     target="_blank"
-                                    class="button is-primary is-ghost"
+                                    class="has-text-primary"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="55"
                                         height="55"
-                                        viewBox="-2 -2 28 28"
+                                        viewBox="0 0 24 24"
                                     >
                                         <path
                                             fill="currentColor"
@@ -842,17 +804,19 @@
                                 <a
                                     href="https://npmx.dev/package/psoda"
                                     target="_blank"
-                                    class="button is-primary is-ghost"
+                                    class="has-text-primary"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="55"
                                         height="55"
-                                        viewBox="0 0 28 28"
+                                        viewBox="3 3 22 22"
                                     >
                                         <path
                                             fill="currentColor"
-                                            d="M22 2V1H2v1H1v20h1v1h20v-1h1V2zM12 8v11H5V5h14v14h-3V8z"
+                                            fill-rule="evenodd"
+                                            d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2zm1-3V6h12v12h-3V9h-3v9z"
+                                            clip-rule="evenodd"
                                         />
                                     </svg>
                                     <!-- <div class="image is-square is-responsive">
@@ -877,11 +841,9 @@
 <script setup lang="ts">
     import { ref, computed } from 'vue';
     import pkg from '../../package.json';
-
+    import shikiView from './components/shikiView.vue';
     //@ts-ignore
-    import { HighCode } from 'vue-highlight-code';
-
-    import 'vue-highlight-code/dist/style.css';
+    // import { HighCode } from 'vue-highlight-code';
 
     import { useSnackbar } from 'psoda';
 
@@ -896,6 +858,18 @@
     const version = ref(pkg.version);
 
     const packageManager = ref<'vite+' | 'npm' | 'pnpm' | 'yarn'>('vite+');
+    const installCode = computed(() => {
+        if (packageManager.value === 'vite+') {
+            return 'vp add psoda';
+        }
+        if (packageManager.value === 'pnpm') {
+            return 'pnpm add psoda';
+        }
+        if (packageManager.value === 'yarn') {
+            return 'yarn add psoda';
+        }
+        return 'npm install psoda';
+    });
     const fizzOpen = ref(true);
 
     function showSnackbar() {
@@ -924,9 +898,9 @@
     });
     const usageCode = ref(`import psoda from "psoda";
 import "psoda/style.css";
-...
+
 const app = createApp(main);
-...
+
 app.use(psoda);`);
 </script>
 
@@ -1170,9 +1144,13 @@ app.use(psoda);`);
             flex: 1;
         }
     }
-
-    pre {
-        background: inherit !important;
-        padding: auto 0 !important;
+    .version {
+        position: absolute;
+        transform: translate(-16px, 18px);
+    }
+    @media screen and (max-width: 600px) {
+        .version {
+            transform: translate(-55px, 15px);
+        }
     }
 </style>
