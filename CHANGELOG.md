@@ -2,8 +2,20 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.0.12](https://github.com/limitlis/psoda-vue.git
+/compare/v0.0.11...v0.0.12)
+
+- chore: updating package homepage [`ab6d7aa`](https://github.com/limitlis/psoda-vue.git
+/commit/ab6d7aa0f0e9903ac1bb044d9bc2b1054bca1e97)
+- chore(site): update base to in vite config to accommodate updated domain [`3292746`](https://github.com/limitlis/psoda-vue.git
+/commit/3292746a288482b632f1535cf4e63e9f979b12bf)
+- chore: re-enable site deploy workflow [`b603ec2`](https://github.com/limitlis/psoda-vue.git
+/commit/b603ec2fcb946397f2e45ee93ee3172954044cf6)
+
 #### [v0.0.11](https://github.com/limitlis/psoda-vue.git
 /compare/v0.0.10...v0.0.11)
+
+> 2 May 2026
 
 - feat(site): add Shiki, and misc styling updates [`9e2187f`](https://github.com/limitlis/psoda-vue.git
 /commit/9e2187f5f07f7bf7f80e5e12abb4d9edaf0c0eb3)
