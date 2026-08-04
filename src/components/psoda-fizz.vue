@@ -1,6 +1,7 @@
 <template>
     <figure
-        class="psoda anchor"
+        v-if="props.anchor"
+        class="psoda psoda-anchor"
         :style="{ anchorName: anchorName }"
         v-on="computedEvents"
         :popovertarget="anchorName"
@@ -10,7 +11,7 @@
         <slot>Trigger</slot>
     </figure>
     <figcaption
-        class="fizz"
+        class="psoda-fizz"
         :id="uid"
         :popover="modelValue === true ? 'manual' : props.popover"
         :style="{ positionAnchor: anchorName, positionArea: position }"
@@ -38,6 +39,7 @@
         popover?: 'auto' | 'manual' | 'hint';
         popoverOptions?: any;
         position?: PositionArea;
+        anchor?: boolean;
     }
 
     const attrs = useAttrs();
@@ -47,6 +49,7 @@
     const props = withDefaults(defineProps<psodaFizzProps>(), {
         popover: 'auto',
         position: 'top',
+        anchor: true,
     });
 
     function fizz(_event?: Event) {
@@ -83,10 +86,20 @@
         }
         return events;
     });
+
+    defineExpose({ anchorName, uid, fizz, pop });
 </script>
 
 <style>
-    [popover].fizz {
+    /*
+        Deliberately NOT wrapped in @layer: this is structural/functional CSS
+        (anchor positioning, tether margins, clip-path) that the tooltip
+        depends on to render correctly. Cascade layers make sense for
+        theme-able opinions, but structural rules need to keep their normal
+        priority so a host page's own generic element resets can't silently
+        break the tooltip's positioning.
+    */
+    :where([popover]).psoda-fizz {
         all: revert;
         --tether-offset: 0px;
         --tether-size: 8px;
@@ -98,7 +111,10 @@
         position-visibility: no-overflow;
         box-sizing: border-box;
         margin: 0 0 var(--tether-size) 0;
-        clip-path: inset(var(--tether-offset)) margin-box;
+        clip-path: inset(
+            var(--tether-offset) var(--tether-offset) calc(var(--tether-offset) - var(--tether-size))
+                var(--tether-offset)
+        );
 
         backface-visibility: hidden;
         overflow: visible;
@@ -152,7 +168,7 @@
             );
         }
 
-        &[data-position='top'] {
+        &:where([data-position='top']) {
             &::after {
                 display: none;
             }
@@ -166,6 +182,10 @@
                 );
             }
             position-try-fallbacks: flip-block;
+            clip-path: inset(
+                var(--tether-offset) var(--tether-offset) calc(var(--tether-offset) - var(--tether-size))
+                    var(--tether-offset)
+            );
 
             @container anchored(fallback: flip-block) {
                 position-area: bottom;
@@ -179,9 +199,13 @@
                 }
             }
         }
-        &[data-position='bottom'] {
+        &:where([data-position='bottom']) {
             position-try-fallbacks: flip-block;
             margin: var(--tether-size) 0 0 0;
+            clip-path: inset(
+                calc(var(--tether-offset) - var(--tether-size)) var(--tether-offset) var(--tether-offset)
+                    var(--tether-offset)
+            );
             &::after {
                 display: none;
             }
@@ -207,9 +231,13 @@
             }
         }
 
-        &[data-position='left'] {
+        &:where([data-position='left']) {
             position-try-fallbacks: flip-inline;
             margin: 0 var(--tether-size) 0 0;
+            clip-path: inset(
+                var(--tether-offset) calc(var(--tether-offset) - var(--tether-size)) var(--tether-offset)
+                    var(--tether-offset)
+            );
             &::before {
                 display: none;
             }
@@ -225,6 +253,10 @@
             @container anchored(fallback: flip-inline) {
                 position-area: right;
                 margin: 0 0 0 var(--tether-size);
+                clip-path: inset(
+                    var(--tether-offset) var(--tether-offset) var(--tether-offset)
+                        calc(var(--tether-offset) - var(--tether-size))
+                );
                 &::after {
                     left: calc(var(--tether-size) * -1);
                     background: linear-gradient(
@@ -236,9 +268,13 @@
             }
         }
 
-        &[data-position='right'] {
+        &:where([data-position='right']) {
             position-try-fallbacks: flip-inline;
             margin: 0 0 0 var(--tether-size);
+            clip-path: inset(
+                var(--tether-offset) var(--tether-offset) var(--tether-offset)
+                    calc(var(--tether-offset) - var(--tether-size))
+            );
             &::before {
                 display: none;
             }
@@ -267,7 +303,7 @@
     }
 
     @starting-style {
-        .fizz {
+        .psoda-fizz {
             &:popover-open {
                 scale: 0;
                 opacity: 0;

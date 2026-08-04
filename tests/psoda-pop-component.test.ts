@@ -28,6 +28,6 @@ test('Psoda Pop component renders', async () => {
 
     expect(button.exists()).toBe(true);
     expect(pop.exists()).toBe(true);
-    expect(pop.find('.dialog-content').text()).toContain("Here's a simple modal");
+    expect(pop.find('.psoda-dialog-content').text()).toContain("Here's a simple modal");
     expect(pop.exists()).toBe(true);
 });

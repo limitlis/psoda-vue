@@ -6,22 +6,22 @@
         <slot></slot>
     </span>
     <dialog
-        :class="['pop', props.snackbar ? 'snackbar' : '']"
+        :class="['psoda-pop', props.snackbar ? 'psoda-snackbar' : '']"
         :id="uid"
         @close="emit('close', $event)"
     >
         <button
             v-if="!props.snackbar"
-            class="close"
+            class="psoda-close"
             :commandfor="uid"
             command="close"
             >&times;</button
         >
         <form
             method="dialog"
-            class="dialog-inner"
+            class="psoda-dialog-inner"
         >
-            <div class="dialog-content">
+            <div class="psoda-dialog-content">
                 <slot
                     name="content"
                     :close="close"
@@ -32,11 +32,11 @@
                     <template v-else-if="props.popoverContent">
                         <div
                             v-if="props.popoverContent?.title"
-                            class="header"
+                            class="psoda-pop-header"
                             v-html="props.popoverContent.title"
                         />
                         <div
-                            class="content"
+                            class="psoda-pop-content"
                             v-html="props.popoverContent.body"
                         />
                     </template>
@@ -50,7 +50,7 @@
                     value="cancel"
                 >
                     <button
-                        class="outline secondary"
+                        class="psoda-btn psoda-btn-secondary"
                         value="cancel"
                         formmethod="dialog"
                         >Cancel</button
@@ -63,7 +63,7 @@
                 >
                     <button
                         value="confirm"
-                        :class="props.popoverContent?.actionClass"
+                        :class="props.popoverContent?.actionClass ?? 'psoda-btn psoda-btn-primary'"
                         formmethod="dialog"
                     >
                         {{ props?.popoverContent?.actionText ?? 'Confirm' }}
@@ -99,7 +99,17 @@
 </script>
 
 <style>
-    .pop {
+    /*
+        Deliberately NOT wrapped in @layer: this is structural/functional CSS
+        (dialog layout, footer button placement, close-button position) that
+        the component depends on to render correctly. Cascade layers make
+        sense for theme-able opinions, but structural rules need to keep
+        their normal priority so a host page's own generic element resets
+        (e.g. Bulma/Bootstrap/Tailwind resetting bare button/footer/header)
+        can't silently break the component's layout.
+    */
+    .psoda-pop {
+        all: revert;
         font-size: 1.2rem;
         box-sizing: border-box;
         display: flex;
@@ -110,7 +120,7 @@
         border: var(--psoda-border);
         background: var(--psoda-background);
         color: var(--psoda-color);
-        border-radius: 8px;
+        border-radius: var(--psoda-border-radius, 9px);
         padding: 0.5rem 0.7rem;
         filter: drop-shadow(0px 0px 2px light-dark(rgba(0, 0, 0, 0.4), rgba(120, 120, 120, 0.4)));
 
@@ -137,7 +147,7 @@
             opacity: 1;
         }
 
-        .close {
+        .psoda-close {
             all: revert;
             cursor: pointer;
             position: absolute;
@@ -156,7 +166,7 @@
             overscroll-behavior: contain;
         }
     }
-    .pop.snackbar {
+    .psoda-pop.psoda-snackbar {
         top: auto;
         max-width: var(--psoda-snackbar-max-width, 60vw);
         min-height: 80px;
@@ -166,8 +176,8 @@
         opacity: 1;
         position: fixed;
         bottom: 0;
-        
-        .dialog-inner {
+
+        .psoda-dialog-inner {
             flex-direction: row;
             footer {
                 align-self: center;
@@ -183,25 +193,25 @@
     }
 
     @starting-style {
-        .pop:not(.snackbar) {
+        .psoda-pop:not(.psoda-snackbar) {
             transition-behavior: allow-discrete;
         }
-        .pop:not(.snackbar)[open] {
+        .psoda-pop:not(.psoda-snackbar)[open] {
             scale: 0;
             opacity: 0;
         }
-        .pop.snackbar {
+        .psoda-pop.psoda-snackbar {
             transform: translateY(0);
             transition-behavior: allow-discrete;
         }
-        .pop.snackbar[open] {
+        .psoda-pop.psoda-snackbar[open] {
             transform: translateY(100%);
             scale: 1;
             opacity: 1;
         }
     }
 
-    .dialog-inner {
+    .psoda-dialog-inner {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -209,7 +219,7 @@
         width: 100%;
         width: stretch;
 
-        .dialog-content {
+        .psoda-dialog-content {
             flex: 1 0;
             height: -webkit-fill-available;
             height: stretch;
