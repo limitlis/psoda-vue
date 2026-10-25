@@ -2,8 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.0.13](https://github.com/limitlis/psoda-vue.git
+/compare/v0.0.12...v0.0.13)
+
+- fix: Fizz directive no longer replaces src element, better universal default styling [`c7703ff`](https://github.com/limitlis/psoda-vue.git
+/commit/c7703ff2faed2b0c02a45f1587697d2f6b14681d)
+- fix: Add Snackbar min-height [`70d09b2`](https://github.com/limitlis/psoda-vue.git
+/commit/70d09b27cafdd12b789c8eae5555219c784e556d)
+
 #### [v0.0.12](https://github.com/limitlis/psoda-vue.git
 /compare/v0.0.11...v0.0.12)
+
+> 6 May 2026
 
 - chore: updating package homepage [`ab6d7aa`](https://github.com/limitlis/psoda-vue.git
 /commit/ab6d7aa0f0e9903ac1bb044d9bc2b1054bca1e97)
