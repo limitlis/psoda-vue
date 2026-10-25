@@ -183,6 +183,14 @@
                 align-self: center;
             }
         }
+        /* A snackbar has no height of its own, so `height: stretch` (set below for dialogs that do)
+           has nothing to fill. Some WebKit versions resolve it to 0, collapsing the message to a
+           thin bar with its text spilling out. Let the message set the height. */
+        .psoda-dialog-inner,
+        .psoda-dialog-content {
+            height: auto;
+            min-width: 0;
+        }
         &::backdrop {
             display: none;
         }
